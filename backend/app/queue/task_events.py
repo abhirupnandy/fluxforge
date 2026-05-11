@@ -1,0 +1,8 @@
+TASK_CREATED='task.created'
+TASK_QUEUED='task.queued'
+TASK_STARTED='task.started'
+TASK_PROGRESS='task.progress'
+TASK_COMPLETED='task.completed'
+TASK_FAILED='task.failed'
+TASK_CANCELLED='task.cancelled'
+TASK_LOG='task.log'
