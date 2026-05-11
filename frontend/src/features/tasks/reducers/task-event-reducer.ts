@@ -1,0 +1,3 @@
+import type { TaskEvent } from '../types/task-types'
+import { useTaskStore } from '../../../stores/task-store'
+export function applyTaskEvent(evt: TaskEvent){const s=useTaskStore.getState(); if(evt.event==='task.progress') s.patchTask(evt.task_id,{progress:Number(evt.data.percentage??0)}); if(evt.event==='task.log') s.appendLog(evt.task_id,String(evt.data.line??'')); if(evt.event==='task.started') s.patchTask(evt.task_id,{state:'RUNNING'}); if(evt.event==='task.queued') s.patchTask(evt.task_id,{state:'QUEUED'}); if(evt.event==='task.completed') s.patchTask(evt.task_id,{state:'COMPLETED',progress:100}); if(evt.event==='task.failed') s.patchTask(evt.task_id,{state:'FAILED'}); if(evt.event==='task.cancelled') s.patchTask(evt.task_id,{state:'CANCELLED'}) }
