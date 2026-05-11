@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTaskSync } from "../../features/tasks/hooks/use-task-sync";
 
 import {
     useWorkspaceStore,
@@ -48,6 +49,8 @@ const navItems: {
 ];
 
 export function AppShell() {
+    useTaskSync();
+
     const {
         currentView,
         setView,

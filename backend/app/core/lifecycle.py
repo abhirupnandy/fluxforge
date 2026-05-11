@@ -1,7 +1,5 @@
-# backend/app/core/lifecycle.py
-
 from app.database.base import Base
-from app.database.models import *
+from app.database.models import *  # noqa: F401,F403
 from app.database.session import engine
 
 
